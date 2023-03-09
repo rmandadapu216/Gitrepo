@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>Decision_Screen</name>
+        <label>Decision Screen</label>
+        <locationX>643</locationX>
+        <locationY>213</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Vendor_Registation_Sucess_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TurnOver1</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>50000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Vendor_Registration</targetReference>
+            </connector>
+            <label>Vendor Registation Sucess Outcome</label>
+        </rules>
+        <rules>
+            <name>Vendor_Registation_Failure_Outcome</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TurnOver1</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <numberValue>50000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Failure_Message_Screen</targetReference>
+            </connector>
+            <label>Vendor Registation Failure Outcome</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Vendor Registration Success {!$Flow.CurrentDateTime}</interviewLabel>
+    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
+    <label>Vendor Registration Success</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <name>Vendor_Registration</name>
+        <label>Vendor Registration</label>
+        <locationX>859</locationX>
+        <locationY>298</locationY>
+        <assignRecordIdToReference>VendorRecordId</assignRecordIdToReference>
+        <connector>
+            <targetReference>Vendor_Sucess</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Turn_Over__c</field>
+            <value>
+                <elementReference>TurnOver1</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Vendor_Name__c</field>
+            <value>
+                <elementReference>Vendor_Name</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Vendor_Registration1__c</object>
+    </recordCreates>
+    <screens>
+        <name>Detail_screen</name>
+        <label>Detail screen</label>
+        <locationX>676</locationX>
+        <locationY>58</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Decision_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>Vendor_Name</name>
+            <dataType>String</dataType>
+            <fieldText>Vendor Name</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>TurnOver1</name>
+            <dataType>Currency</dataType>
+            <fieldText>TurnOver</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <scale>0</scale>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Failure_Message_Screen</name>
+        <label>Failure Message Screen</label>
+        <locationX>488</locationX>
+        <locationY>396</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>FailureMessage1</name>
+            <fieldText>&lt;p&gt;Failure Registration&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Vendor_Sucess</name>
+        <label>Vendor Sucess</label>
+        <locationX>853</locationX>
+        <locationY>408</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>sucessscreen</name>
+            <fieldText>&lt;p&gt;Vendor Registration success{!VendorRecordId}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Welcome to Vendor Registration</description>
+        <name>Welcome_Screen1</name>
+        <label>Welcome Screen</label>
+        <locationX>476</locationX>
+        <locationY>55</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Detail_screen</targetReference>
+        </connector>
+        <fields>
+            <name>VendorRegistration</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(67, 55, 105);&quot;&gt;Welcome to Vendor Registration Screen&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Welcome_Screen1</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>VendorRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>
