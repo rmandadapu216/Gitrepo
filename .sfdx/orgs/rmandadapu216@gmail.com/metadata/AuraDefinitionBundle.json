@@ -1,0 +1,83 @@
+{
+  "status": 0,
+  "result": [
+    {
+      "createdById": "005DC000002iaWkYAI",
+      "createdByName": "Vishnu Vardhan S",
+      "createdDate": "2023-01-06T07:08:16.000Z",
+      "fileName": "aura/selfRegister",
+      "fullName": "selfRegister",
+      "id": "0AbDC000000LEUm0AO",
+      "lastModifiedById": "005DC000002iaWkYAI",
+      "lastModifiedByName": "Vishnu Vardhan S",
+      "lastModifiedDate": "2023-01-06T07:08:16.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005DC000002iaWkYAI",
+      "createdByName": "Vishnu Vardhan S",
+      "createdDate": "2023-01-06T07:08:15.000Z",
+      "fileName": "aura/setStartUrl",
+      "fullName": "setStartUrl",
+      "id": "0AbDC000000LEUk0AO",
+      "lastModifiedById": "005DC000002iaWkYAI",
+      "lastModifiedByName": "Vishnu Vardhan S",
+      "lastModifiedDate": "2023-01-06T07:08:15.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005DC000002iaWhYAI",
+      "createdByName": "Suresh B",
+      "createdDate": "2023-01-24T13:19:50.000Z",
+      "fileName": "aura/SalesAccountOrderFormPDF",
+      "fullName": "SalesAccountOrderFormPDF",
+      "id": "0AbDC000000LHZi0AO",
+      "lastModifiedById": "005DC000002iaWhYAI",
+      "lastModifiedByName": "Suresh B",
+      "lastModifiedDate": "2023-01-24T13:21:01.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005DC000002iaWkYAI",
+      "createdByName": "Vishnu Vardhan S",
+      "createdDate": "2023-01-06T07:08:15.000Z",
+      "fileName": "aura/setExpId",
+      "fullName": "setExpId",
+      "id": "0AbDC000000LEUj0AO",
+      "lastModifiedById": "005DC000002iaWkYAI",
+      "lastModifiedByName": "Vishnu Vardhan S",
+      "lastModifiedDate": "2023-01-06T07:08:15.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005DC000002iaWkYAI",
+      "createdByName": "Vishnu Vardhan S",
+      "createdDate": "2023-01-06T07:08:17.000Z",
+      "fileName": "aura/forgotPassword",
+      "fullName": "forgotPassword",
+      "id": "0AbDC000000LEUn0AO",
+      "lastModifiedById": "005DC000002iaWkYAI",
+      "lastModifiedByName": "Vishnu Vardhan S",
+      "lastModifiedDate": "2023-01-06T07:08:17.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    },
+    {
+      "createdById": "005DC000002iaWkYAI",
+      "createdByName": "Vishnu Vardhan S",
+      "createdDate": "2023-01-06T07:08:16.000Z",
+      "fileName": "aura/loginForm",
+      "fullName": "loginForm",
+      "id": "0AbDC000000LEUl0AO",
+      "lastModifiedById": "005DC000002iaWkYAI",
+      "lastModifiedByName": "Vishnu Vardhan S",
+      "lastModifiedDate": "2023-01-06T07:08:16.000Z",
+      "manageableState": "unmanaged",
+      "type": "AuraDefinitionBundle"
+    }
+  ]
+}
